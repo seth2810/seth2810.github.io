@@ -1,8 +1,8 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSquareEnvelope, faInfinity } from '@fortawesome/free-solid-svg-icons';
-import { faGithubSquare, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { faPaperPlane, faInfinity } from '@fortawesome/free-solid-svg-icons';
+import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
 const Index = () => (
   <>
@@ -31,7 +31,7 @@ const Index = () => (
         <li>
           <Link href="https://github.com/seth2810" passHref>
             <a target="_blank">
-              <FontAwesomeIcon icon={faGithubSquare} width={18} />
+              <FontAwesomeIcon icon={faGithub} width={18} />
             </a>
           </Link>
         </li>
@@ -44,7 +44,7 @@ const Index = () => (
         </li>
         <li>
           <Link href="mailto:gafurov.roma89@gmail.com">
-            <a><FontAwesomeIcon icon={faSquareEnvelope} width={18} /></a>
+            <a><FontAwesomeIcon icon={faPaperPlane} width={18} /></a>
           </Link>
         </li>
       </ul>
