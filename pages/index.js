@@ -23,31 +23,26 @@ const Index = () => (
       <nav>
         <ul>
           <li>
-            <Link href="/blog" target="_blank">Blog</Link>
+            <Link href="https://github.com/seth2810" passHref>
+              <a target="_blank">
+                <FontAwesomeIcon icon={faGithub} width={18} />
+              </a>
+            </Link>
+          </li>
+          <li>
+            <Link href="https://linkedin.com/in/seth2810">
+              <a target="_blank">
+                <FontAwesomeIcon icon={faLinkedin} width={18} />
+              </a>
+            </Link>
+          </li>
+          <li>
+            <Link href="mailto:gafurov.roma89@gmail.com">
+              <a><FontAwesomeIcon icon={faPaperPlane} width={18} /></a>
+            </Link>
           </li>
         </ul>
       </nav>
-      <ul className="social-buttons">
-        <li>
-          <Link href="https://github.com/seth2810" passHref>
-            <a target="_blank">
-              <FontAwesomeIcon icon={faGithub} width={18} />
-            </a>
-          </Link>
-        </li>
-        <li>
-          <Link href="https://linkedin.com/in/seth2810">
-            <a target="_blank">
-              <FontAwesomeIcon icon={faLinkedin} width={18} />
-            </a>
-          </Link>
-        </li>
-        <li>
-          <Link href="mailto:gafurov.roma89@gmail.com">
-            <a><FontAwesomeIcon icon={faPaperPlane} width={18} /></a>
-          </Link>
-        </li>
-      </ul>
     </footer>
   </>
 );
