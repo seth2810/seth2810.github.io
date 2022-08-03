@@ -2,7 +2,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPaperPlane, faInfinity } from '@fortawesome/free-solid-svg-icons';
-import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { faGithub, faLinkedin, faMedium } from '@fortawesome/free-brands-svg-icons';
 
 const Index = () => (
   <>
@@ -37,8 +37,17 @@ const Index = () => (
             </Link>
           </li>
           <li>
+            <Link href="https://medium.com/@seth2810">
+              <a target="_blank">
+                <FontAwesomeIcon icon={faMedium} width={18} />
+              </a>
+            </Link>
+          </li>
+          <li>
             <Link href="mailto:gafurov.roma89@gmail.com">
-              <a><FontAwesomeIcon icon={faPaperPlane} width={18} /></a>
+              <a target="_self">
+                <FontAwesomeIcon icon={faPaperPlane} width={18} />
+              </a>
             </Link>
           </li>
         </ul>
