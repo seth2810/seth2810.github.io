@@ -9,7 +9,10 @@ const Index = () => (
     <Head>
       <title>Roman Gafurov - Software Engineer</title>
       <meta name="apple-mobile-web-app-capable" content="yes" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+      />
       <link rel="shortcut icon" href="/favicon.ico" />
     </Head>
 
@@ -23,31 +26,23 @@ const Index = () => (
       <nav>
         <ul>
           <li>
-            <Link href="https://github.com/seth2810" passHref>
-              <a target="_blank">
-                <FontAwesomeIcon icon={faGithub} width={18} />
-              </a>
+            <Link href="https://github.com/seth2810" passHref target="_blank">
+              <FontAwesomeIcon icon={faGithub} width={18} />
             </Link>
           </li>
           <li>
-            <Link href="https://linkedin.com/in/seth2810">
-              <a target="_blank">
-                <FontAwesomeIcon icon={faLinkedin} width={18} />
-              </a>
+            <Link href="https://linkedin.com/in/roman-gafurov" target="_blank">
+              <FontAwesomeIcon icon={faLinkedin} width={18} />
             </Link>
           </li>
           <li>
-            <Link href="https://medium.com/@seth2810">
-              <a target="_blank">
-                <FontAwesomeIcon icon={faMedium} width={18} />
-              </a>
+            <Link href="https://medium.com/@seth2810" target="_blank">
+              <FontAwesomeIcon icon={faMedium} width={18} />
             </Link>
           </li>
           <li>
-            <Link href="mailto:gafurov.roma89@gmail.com">
-              <a target="_self">
-                <FontAwesomeIcon icon={faPaperPlane} width={18} />
-              </a>
+            <Link href="mailto:gafurov.roma89@gmail.com" target="_self">
+              <FontAwesomeIcon icon={faPaperPlane} width={18} />
             </Link>
           </li>
         </ul>
