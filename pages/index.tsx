@@ -20,10 +20,6 @@ const Index = () => (
       <h1>Roman Gafurov</h1>
       <FontAwesomeIcon icon={faInfinity} width={22} />
       <p>Software Engineer</p>
-
-      <h1 className="text-3xl font-bold underline">Hello world!</h1>
-
-      <Button>Save changes</Button>
     </main>
 
     <footer>
