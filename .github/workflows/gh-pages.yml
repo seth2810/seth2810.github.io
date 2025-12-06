@@ -15,9 +15,9 @@ jobs:
     runs-on: ubuntu-24.04
     strategy:
       matrix:
-        bun-version: [1.0.11]
+        bun-version: [1.3.3]
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: Use bun@${{ matrix.bun-version }}
         uses: oven-sh/setup-bun@v2
         with:
@@ -34,6 +34,7 @@ jobs:
           path: ./out
 
   deploy:
+    if: github.ref == 'refs/heads/main'
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -43,4 +44,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-        if: github.ref == 'refs/heads/main'
