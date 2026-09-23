@@ -27,8 +27,8 @@ const Principles = () => (
     <div>
       <SectionHeading>Stack</SectionHeading>
       <div className="flex flex-wrap gap-2">
-        {STACK.map((s, i) => (
-          <Tag key={s} selected={i === 0}>
+        {STACK.map((s) => (
+          <Tag key={s} selected>
             {s}
           </Tag>
         ))}
