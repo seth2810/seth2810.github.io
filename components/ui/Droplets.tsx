@@ -20,7 +20,7 @@ const DROPS: [number, number, number, number, string, number, number, number][] 
 ];
 
 // Animated blurred background with a slow parallax; must sit inside a relatively positioned page wrapper.
-export const Droplets = () => {
+export const Droplets: React.FC = () => {
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
