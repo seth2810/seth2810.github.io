@@ -11,17 +11,14 @@ const VARIANT = {
   outline: 'bg-transparent border-accent text-accent hover:bg-accent hover:text-navy',
 };
 
-export const Button = ({
-  href,
-  variant,
-  size,
-  children,
-}: {
+export type ButtonProps = {
   href: string;
   variant: keyof typeof VARIANT;
   size: keyof typeof SIZE;
   children: ReactNode;
-}) => (
+};
+
+export const Button: React.FC<ButtonProps> = ({ href, variant, size, children }) => (
   <a
     href={href}
     target="_blank"

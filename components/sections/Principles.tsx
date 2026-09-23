@@ -1,34 +1,33 @@
-import { Section, SectionHeading, Tag } from '../ui';
+import { Section, SectionHeading, Tag, type SectionHeader } from '../ui';
+import type { PrinciplesSection, StackSection } from '../../config/profile';
 
-const PRINCIPLES = [
-  ['Measure before optimizing.', 'Every number on this page started with a profile, a trace, or a bill.'],
-  ['Boring tech, sharp execution.', 'Proven tools pushed hard beat novel tools used timidly.'],
-  ['Teams outlast code.', 'Mentoring and honest reviews compound longer than any service.'],
-];
-
-const STACK = ['Go', 'Kafka', 'PostgreSQL', 'Redis', 'Kubernetes', 'AWS', 'gRPC', 'Elasticsearch', 'Node.js'];
+export type PrinciplesProps = SectionHeader & {
+  stackTitle: string;
+  principles: PrinciplesSection;
+  stack: StackSection;
+};
 
 // "How I work" and "Stack", side by side.
-const Principles = () => (
+const Principles: React.FC<PrinciplesProps> = ({ id, title, stackTitle, principles, stack }) => (
   <Section className="grid gap-[60px] md:grid-cols-2">
     <div>
-      <SectionHeading id="principles">How I work</SectionHeading>
+      <SectionHeading id={id}>{title}</SectionHeading>
       <ol className="m-0 flex list-none flex-col gap-5 p-0">
-        {PRINCIPLES.map(([title, body], i) => (
-          <li key={title} className="flex items-baseline gap-[15px]">
+        {principles.items.map((item, i) => (
+          <li key={item.title} className="flex items-baseline gap-[15px]">
             <div className="min-w-6 font-extrabold text-accent">{String(i + 1).padStart(2, '0')}</div>
             <div className="leading-[1.5625]">
-              <b>{title}</b> <span className="text-secondary">{body}</span>
+              <b>{item.title}</b> <span className="text-secondary">{item.body}</span>
             </div>
           </li>
         ))}
       </ol>
     </div>
     <div>
-      <SectionHeading>Stack</SectionHeading>
+      <SectionHeading>{stackTitle}</SectionHeading>
       <div className="flex flex-wrap gap-2">
-        {STACK.map((s, i) => (
-          <Tag key={s} selected={i === 0}>
+        {stack.items.map((s) => (
+          <Tag key={s} selected>
             {s}
           </Tag>
         ))}

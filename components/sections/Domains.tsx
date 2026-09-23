@@ -1,25 +1,19 @@
-import { Card, Section, SectionHeading } from '../ui';
+import { Card, Section, SectionHeading, type SectionHeader } from '../ui';
+import type { DomainsSection } from '../../config/profile';
 
-const DOMAINS = [
-  ['Fintech & trading', 'Exchanges, wallets, payment flows. Latency is money, correctness is non-negotiable.'],
-  ['Travel & booking', 'Fare search, availability, checkout. Bursty traffic, huge fan-out, flaky third-party APIs.'],
-  ['High-load platforms', 'Marketplaces, SaaS, edtech at scale. Infra bills that grow slower than traffic.'],
-];
+export type DomainsProps = DomainsSection & SectionHeader;
 
-const Domains = () => (
+const Domains: React.FC<DomainsProps> = ({ id, title, intro, items }) => (
   <Section>
-    <SectionHeading id="domains" className="mb-3">
-      Where I do my best work
+    <SectionHeading id={id} className="mb-3">
+      {title}
     </SectionHeading>
-    <p className="m-0 mb-[30px] max-w-[600px] leading-[1.5625] text-secondary">
-      If your project sits outside these domains, I&apos;m probably not your best option, and I&apos;ll tell you so
-      in the first five minutes.
-    </p>
+    <p className="m-0 mb-[30px] max-w-[600px] leading-[1.5625] text-secondary">{intro}</p>
     <div className="grid gap-[15px] md:grid-cols-3">
-      {DOMAINS.map(([title, body]) => (
-        <Card key={title} hover className="p-[30px]">
-          <h3 className="mb-2.5 text-xl leading-tight font-semibold">{title}</h3>
-          <p className="m-0 text-[15px] leading-[1.5625] text-secondary">{body}</p>
+      {items.map((item) => (
+        <Card key={item.title} hover className="p-[30px]">
+          <h3 className="mb-2.5 text-xl leading-tight font-semibold">{item.title}</h3>
+          <p className="m-0 text-[15px] leading-[1.5625] text-secondary">{item.body}</p>
         </Card>
       ))}
     </div>
