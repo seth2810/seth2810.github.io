@@ -1,53 +1,35 @@
 import Head from 'next/head';
-import Link from 'next/link';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPaperPlane, faInfinity } from '@fortawesome/free-solid-svg-icons';
-import { faGithub, faLinkedin, faMedium } from '@fortawesome/free-brands-svg-icons';
+import { Droplets } from '../components/ui';
+import Nav from '../components/sections/Nav';
+import Hero from '../components/sections/Hero';
+import Domains from '../components/sections/Domains';
+import Work from '../components/sections/Work';
+import Principles from '../components/sections/Principles';
+import Cta from '../components/sections/Cta';
+import Footer from '../components/sections/Footer';
 
 const Index = () => (
   <>
     <Head>
-      <title>Roman Gafurov - Software Engineer</title>
-      <meta name="apple-mobile-web-app-capable" content="yes" />
-      <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
-      />
+      <title>Roman Gafurov — Go engineer for high-load systems</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
       <link rel="shortcut icon" href="/favicon.ico" />
     </Head>
 
-    <main>
-      <h1>Roman Gafurov</h1>
-      <FontAwesomeIcon icon={faInfinity} width={22} />
-      <p>Software Engineer</p>
-    </main>
-
-    <footer>
-      <nav>
-        <ul>
-          <li>
-            <Link href="https://github.com/seth2810" passHref target="_blank">
-              <FontAwesomeIcon icon={faGithub} width={18} />
-            </Link>
-          </li>
-          <li>
-            <Link href="https://linkedin.com/in/roman-gafurov" target="_blank">
-              <FontAwesomeIcon icon={faLinkedin} width={18} />
-            </Link>
-          </li>
-          <li>
-            <Link href="https://medium.com/@seth2810" target="_blank">
-              <FontAwesomeIcon icon={faMedium} width={18} />
-            </Link>
-          </li>
-          <li>
-            <Link href="mailto:gafurov.roma89@gmail.com" target="_self">
-              <FontAwesomeIcon icon={faPaperPlane} width={18} />
-            </Link>
-          </li>
-        </ul>
-      </nav>
-    </footer>
+    <div className="relative min-h-screen overflow-clip bg-navy text-white">
+      <Droplets />
+      <div className="relative mx-auto max-w-[1180px]">
+        <Nav />
+        <main>
+          <Hero />
+          <Domains />
+          <Work />
+          <Principles />
+          <Cta />
+        </main>
+        <Footer />
+      </div>
+    </div>
   </>
 );
 
